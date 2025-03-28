@@ -1,161 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Web Developer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <style>
-    body {
-      font-family: 'IBM Plex Mono', monospace;
-      background-color: #121212;
-      color: #E0E0E0;
-    }
-    .navbar {
-      background-color: #1E1E1E;
-      padding: 1rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-    .navbar a {
-      color: #B0BEC5;
-      transition: color 0.3s ease;
-    }
-    .navbar a:hover {
-      color: #00ADB5;
-    }
-    .section-box {
-      background-color: #1E1E1E;
-      color: #E0E0E0;
-      padding: 2rem;
-      margin-top: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-    .section-box:hover {
-      transform: translateY(-5px);
-      background-color: #292929;
-    }
-    .skill-item {
-      transition: transform 0.3s ease, color 0.3s ease;
-      cursor: pointer;
-    }
-    .skill-item:hover {
-      transform: translateX(8px);
-      color: #00ADB5;
-    }
-    .hidden-list {
-      display: none;
-      margin-top: 10px;
-    }
-    .section-box:hover .hidden-list {
-      display: block;
-      animation: fadeIn 0.5s ease-in;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .certificate-item {
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-    .certificate-item:hover {
-      color: #00ADB5;
-    }
-    .certificate-image {
-      display: none;
-      margin-top: 10px;
-      width: 100%;
-      max-width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: opacity 0.3s ease-in-out;
-    }
-    .profile-img {
-      transition: transform 0.3s ease-in-out;
-    }
-    .profile-img:hover {
-      transform: scale(1.1) rotate(3deg);
-    }
-  </style>
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #84a6e9;
+        }
+
+        header {
+            background-color: #941919;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative; /* Add this */
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Add styles for the round profile picture */
+        .profile-picture {
+            width: 100px; /* Adjust the size as needed */
+            height: 100px;
+            border-radius: 75%; /* Create a circular shape */
+            object-fit: cover; /* To ensure the image fills the circular area */
+            position: absolute; /* Add this */
+            top: 75px; /* Adjust top position as needed */
+            left: 75px; /* Adjust left position as needed */
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .section-content {
+            background-color: #fff;
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+
+        .download-button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+            align-self: center;
+        }
+
+        .download-button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    </style>
 </head>
-<body class="flex flex-col min-h-screen">
-  <nav class="navbar flex justify-between items-center">
-    <div class="text-xl font-bold text-white">MY PORTFOLIO</div>
-    <div class="space-x-4">
-      <a href="#" class="hover:text-red-500">HOME</a>
-      <a href="./Niyo.pdf" class="hover:text-red-500">Download</a>
-    </div>
-  </nav>
+<body>
+    <header>
+        <div class="header-content">
+            <!-- Add your profile picture here -->
+            <img src="./Niyo.png" alt="Your Profile Picture" class="profile-picture">
+            <h1>Niyothi</h1>
+            <p>Am Bachelor of Computer Application Student</p>
+        </div>
+    </header>
 
-
-  <div class="container mx-auto mt-10 p-4 flex-grow fade-in">
-    <div class="flex flex-col items-center md:flex-row md:items-start md:space-x-8">
-      <div class="w-32 h-32 bg-gray-700 mb-4 md:mb-0 rounded-full overflow-hidden">
-        <img src="./Niyo.png" alt="Profile picture placeholder" class="w-full h-full object-cover profile-img"/>
-      </div>
-      <div class="text-center md:text-left">
-        <h1 class="text-2xl font-bold text-white">Niyothi</h1>
-        <p class="text-lg">
-          I'm <span class="text-red-400 input"></span>
-        </p>
-        <p>
-          <i>I have 1 year expierience in web development and Application Designing. <br>I was Well skilled at HTML, CSS and JavaScript!...</i>
-        </p>
-      </div>
-    </div>
-
-    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="section-box text-center hover-effect">
-        <h2 class="font-bold text-lg">SKILLS</h2>
-        <ul class="hidden-list text-sm">
-          <li class="skill-item">🔹 C++</li>
-          <li class="skill-item">🔹 Java</li>
-          <li class="skill-item">🔹 PHP</li>
-          <li class="skill-item">🔹 Python</li>
-          <li class="skill-item">🔹 JavaScript</li>
-          <li class="skill-item">🔹 HTML</li>
-          <li class="skill-item">🔹 CSS</li>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+           
         </ul>
-      </div>
+    </nav>
 
-      <!-- Certificates Section (Now Above Experience) -->
-      <div class="section-box text-center hover-effect">
-        <h2 class="text-lg font-bold">CERTIFICATES</h2>
-        <ul class="hidden-list text-sm">
-          <li class="certificate-item" >🎓 None</li>
-        </ul>
-        <img id="certificate-image" class="certificate-image" src="" alt="Certificate Preview">
-      </div>
+    <section id="about">
+        <div class="section-content">
+            <h2>About Me</h2>
+            <p>I am a <b>Bca student</b> and I want to learn many programming languages and codings.
+               Iam good at the languages like C,C++,Java,Php,Python,html etc,...I want 
+               to create more codings and programs.I had more interst to develop from these myself.
+               I had a lot of extra carricular activities too.</p>
 
-      <div class="section-box text-center hover-effect">
-        <h2 class="font-bold text-lg">EXPERIENCE</h2>
-        <p class="hidden-list text-sm">No Experience Yet</p>
-      </div>
+        </div>
+    </section>
 
-      <div class="section-box text-center hover-effect">
-        <h2 class="font-bold text-lg">CONTACT</h2>
-        <ul class="hidden-list text-sm">
-          <li>📞 Phone: <a href="tel:+91 93429 92559" class="text-cyan-400 hover:text-red-400">+91 93429 92559</a></li>
-          <li>💻 Mail: <a href="mailto:niyothir2005@gmail.com" class="text-cyan-400 hover:text-red-400">niyothir2005@gmail.com</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    <section id="education">
+        <div class="section-content">
+            <h2>Education</h2>
+            <p>Bharathidasan University,Government Arts college(AUTONOMOUS),Kumbakonam.</p>
+            
+            
+        </div>
+    </section>
 
-  <script>
-    var typed = new Typed('.input', {
-      strings: ["Web Developer!", "Application Designer!"],
-      typeSpeed: 100,
-      backSpeed: 100,
-      loop: true,
-      showCursor: true,
-      cursorChar: '|',
-    });
-  </script>
+    <section id="skills">
+        <div class="section-content">
+            <h2>Skills</h2>
+            <ul>
+                <li>C</li>
+                <li>C++</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>Php</li>
+                <li>html</li>
+                <li>Css</li>
+                <li>Java script</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-content">
+            <h2>Projects</h2>
+            <ul>
+                <li><a href="#">Digital portfolio</a></li>
+                <!-- Add more project links here -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="resume">
+    
+        <div class="section-content">
+            <center>
+            <h2>Resume</h2>
+            <a href="./Niyo.pdf" target="_blank" class="download-button">Download CV</a>
+        </center>
+        </div>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Niyothi</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling to section when clicking on navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
